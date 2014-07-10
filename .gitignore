@@ -1,0 +1,17 @@
+.bin
+.idea
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.pyc
+.DS_Store
+pids
+logs
+temp
+results
+sea-modules
+temp.py
