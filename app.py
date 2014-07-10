@@ -22,8 +22,8 @@ define("debug", default=False, help="web js is debug", type=bool)
 define('num_processes', default=1, help="web server processes num", type=int)
 
 class Application(tornado.web.Application):
-    def __init__(self):
 
+    def __init__(self):
         settings = dict(
             debug=options.debug,
             # 设置前端静态文件夹路径
@@ -36,15 +36,14 @@ class Application(tornado.web.Application):
 
 
 def main():
-
     parse_config_file(path.join(path.dirname(__file__), "pyphoto.conf"))
     parse_command_line()
 
     http_server = HTTPServer(Application(), xheaders=True)
-    http_server.listen(int(options.port))
 
-    # http_server.bind(int(options.port))
-    # http_server.start(options.num_processes)
+    http_server.bind(int(options.port))
+    # 开启多线程服务
+    http_server.start(options.num_processes)
 
     print 'tornado version:', tornado.version, options.description
     print 'server start by port ', options.port
@@ -52,5 +51,4 @@ def main():
     tornado.ioloop.IOLoop.instance().start()
 
 if __name__ == '__main__':
-
     main()

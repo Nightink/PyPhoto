@@ -13,7 +13,6 @@ def parse_config_file(path):
     execfile(path, config, config)
 
     for name in config:
-
         if name in options:
             # options[name] = config[name] # TypeError: 'OptionParser' object does not support item assignment
             # 设置实例属性

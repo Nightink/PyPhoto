@@ -17,17 +17,19 @@ from libs.dbconn import mongodb, fs
 
 # 注册后端路由处理机制
 class MainHandler(tornado.web.RequestHandler):
+
     """docstring for AboutHandler"""
     def get(self):
         self.write("welcome to PyPhoto.")
 
 class AboutHandler(tornado.web.RequestHandler):
+
     """docstring for AboutHandler"""
     def get(self):
-
         self.write("by Nightink")
 
 class UploadHandler(tornado.web.RequestHandler):
+
     """图片上传响应handler"""
 
     def post(self):
@@ -73,9 +75,9 @@ class UploadHandler(tornado.web.RequestHandler):
 
 
 class AttachmentHandler(tornado.web.RequestHandler):
+
     """docstring for AttachmentHandler"""
     def get(self, name):
-
         gf = fs.get(ObjectId(name))
         im = gf.read()
 
@@ -84,10 +86,10 @@ class AttachmentHandler(tornado.web.RequestHandler):
         self.write(im)
 
     def delete(self, name):
-
         print "delete ObjectId is ", name
 
 class UserHandler(tornado.web.RequestHandler):
+
     """docstring for UserHandler"""
 
     def get(self):

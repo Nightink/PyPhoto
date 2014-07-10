@@ -1,14 +1,13 @@
-# 基于python tornado 应用 **开发中，请勿使用**
+# 基于python tornado 应用
 
-## ./app.py
+**开发中，请勿使用**
 
-### mac osx
-* `$ pip install tornado`
-* `$ brew install mongodb`
+```shell
 
-### windows
-* [tornadoweb官网](http://www.tornadoweb.org/)
-* [mongodb官网](http://www.mongodb.org/)
+$ brew install mongodb
+$ pip install tornado
+
+```
 
 ### 运行
 * 在程序目录下创建`temp`文件夹，然后终端运行`$ ./app.py`
